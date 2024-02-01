@@ -1,0 +1,68 @@
+<!-- https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-svg -->
+
+<!-- scalable image format, properties can be changed through CSS and JavaScript
+eg. icons, graphs/charts, large/simple images, patterned backgrounds, applying effects to other elements via SVG filters -->
+
+<!-- Scalable Vector Graphics vs. raster graphics
+Raster graphics are defined by a grid of pixels where the detail is limited to the size of that pixel grid. Increasing the size of the image will increase the size of the grid. The larger the grid, the bigger the filesize grows.
+
+SVG has no grid, but formulas for different shapes and lines. Easily scale to any size and will have no effect on the quality/size of the file. -->
+
+<!-- SVGs are defined using XML (Extensible Markup Language)
+HTML-like syntax used in APIs, RSS, spreadsheet and word editor software
+
+Benefits:
+1. human-readable -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <rect x=0 y=0 width=100 height=50 />
+    <circle class="svg-circle" cx="50" cy="50" r="10"/>
+</svg>
+<!-- 2. designed to be interoperable with HTML
+can put the code above directly in an HTML file, with no changes will display the image
+because it can become an element in the DOM, able to target with CSS and Element WebAPI -->
+
+<!-- Drawbacks
+(*) great for simple images, extremely inefficient at storing complex images 
+not good for photo-realistic images where there is fine detail/texture -->
+
+<!-- SVG anatomy
+Adobe Illustrator/Figma can create SVGs' code file -->
+<div class="container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <rect x=0 y=0 width=100 height=100 fill="burlywood"/>
+        <path d="M 10 10 H 90 V 90 L 10 60" fill="transparent" stroke="black" stroke-width="3"/>
+      <circle cx=50 cy=50 r=20 class="svg-circle"/>
+        <g class="svg-text-group">
+          <text x="20" y="25" rotate="10" id="hello-text">Hello!</text>
+          <use href="#hello-text" x="-10" y="65" fill="white"/>
+        </g>
+    </svg>
+</div>
+<!--
+1. xmlns "XML NameSpace"
+(*) specifies what dialect of XML is being used
+in this case, SVG language spec
+more info: https://developer.mozilla.org/en-US/docs/Web/SVG/Namespaces_Crash_Course 
+2. viewBox
+defines the bounds of the SVG - positions of different points of the elements in the SVG
+also defines the aspect ratio and the origin of the SVG
+3. class, id
+these attributes function just like in HTML
+allow easy targeting of any element via CSS/JavaScript + reuse an element via <use/>
+4. <circle>, <rect>, <path>, <text> are defined by the SVG namespace
+basic building-blocks - extremely complex images are created with lots of these basic elements
+more info: https://developer.mozilla.org/en-US/docs/Web/SVG/Element 
+5. fill, stroke can be changed in CSS -->
+
+<!-- Embedding SVGs
+1. linked
+works the same way as linking an image
+can use <img> (HTML) or in CSS using background-image:url(./my-image.svg)
+will scale properly but the contents of the SVG won't be accessible from the webpage
+generally cleaner and simpler
+
+2. inline 
+by pasting the SVG contents directly into the webpage's code
+(*) will render correctly and able to view the SVG's properties in the code, allowing alteration of the image dynamically via CSS/JavaScript
+(*) drawbacks: makes code harder to read, page is less cacheable, a large SVG might delay the rest of the HTML from loading 
+these drawbacks can be avoided by using React/build-tool like webpack -->
