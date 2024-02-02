@@ -1,0 +1,35 @@
+<!-- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units -->
+
+<!-- 1. Absolute units (a.u.)-->
+<!-- always the same in any context -->
+<!-- px - the size of a pixel doesn't change relative to anything else on the page. It's the only a.u. that should be used in web projects -->
+<!-- in and cm is commonly used in print setting because they are related to physical units -->
+
+<!-- 2. Relative units (r.u.) -->
+<!-- can be change based on their context -->
+<!-- em and rem both refer to a font size - often used to define other sizes in CSS -->
+<!-- prefer to use rem -->
+<!-- 1em is the font-size of an element / the element's parent if you're using it to set font-size
+eg. if an element's font-size is 16px, then setting its width to 4em would make its width 64px (16 * 4 == 64) -->
+<!-- relying on em could mean that a particular size could change if the context changes -->
+<!-- 1rem is the font-size of the root element (:root/html)
+the math works the same as em but without the added complexity of keeping track of the parent's font size -->
+<!-- (*) if possible, respect a user's wishes regarding font-size by allowing users to change the base font-size to increase readability -->
+
+<!-- 3. Viewport units (v.u.) -->
+<!-- vh and vw relate to the size of the viewport -->
+<!-- 1vh is equal to 1% of the viewport height and 1vw is equal to 1% of the viewport width -->
+<!-- useful when sizing something relative to the viewport eg. full-height heroes, full-screen app-like interfaces -->
+
+<!-- https://css-tricks.com/fun-viewport-units/ - scroll indicator -->
+
+<!-- Why would you want to use em or rem for font-size instead of px? -->
+<!-- Because em and rem are relative units that can be easily changed based on their context while px is an absolute unit. Relative units are useful for font-size as it helps when users would like to change the base font-size to increase readability -->
+
+<!-- What are some instances where you might want to use vh and vw? -->
+<!-- vh and vw is used when sizing something relative to the viewport -->
+
+<!-- https://codyloyd.com/2021/css-units/ -->
+
+<!-- What are some instances where you might want to use px instead of a relative unit? -->
+<!-- Because of accessibility. When users change the default font-size of their browser to improve readability, the lengths that are defined in either em/rem will change while px value will remain static. -->

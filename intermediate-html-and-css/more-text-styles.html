@@ -1,0 +1,64 @@
+<!-- What are the 2 ways to add fonts that are not installed on a user’s computer? -->
+<!-- Using online font library like Google Fonts and Font Library or premium, non-free Adobe Fonts. -->
+<!-- 1. external approach - in html file -->
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<!-- 2. external approach - in css file -->
+<!-- @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); -->
+
+<!-- both approach can then be linked in the <style> making it into an internal approach -->
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+</style>
+
+<!-- What is the ‘system font stack’ and why would you want to use it? -->
+<!-- When using the font-family property to change to another font that don't happen to be installed on the user's computer, then a fallback font will be displayed. If there is no fallback font defined in the file, then the default HTML font will be used. To avoid this, it's common to list long stacks of fonts on projects. One of them is called the 'system font stack' -->
+<style>
+    body {
+        font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+</style>
+<!-- This stack will try to use the default font of the system's user interface. It will go through each of these fonts until it finds one that is installed on the system, then uses that font. -->
+
+<!-- Which property would you use to increase or decrease the space between letters in a word? -->
+<!-- letter-spacing -->
+
+<!-- Which property would you use to increase or decrease the space between lines in a paragraph? -->
+<!-- line-height -->
+
+<!-- Other text style properties -->
+<!-- 1. font-style -->
+<!-- to make a font italic, bold, underlined, or highlighted, etc -->
+<!-- recommended to use a CSS property if whole text needs to be changed -->
+<style>
+    h1 {
+        font-style: italic;
+    }
+</style>
+<!-- if text should only have some emphasis, use the corret HTML element -->
+<p>I <em>never</em> said he stole your money</p>
+<p>I never said <em>he</em> stole your money</p>
+<p>I never said he stole <em>your</em> money</p>
+
+<!-- 2. text-transform -->
+<!-- changes the case of the given text -->
+<!-- forces a tag to be uppercase or capitalize every word -->
+
+<!-- 3. text-shadow -->
+<!-- adds a shadow around the text in the selected element -->
+
+<!-- 4. ellipsis -->
+<!-- useful when need to truncate overflowing text with an ellipsis -->
+<!-- to do this: it won't be a single property, used with the text-overflow property accompanied with some other properties due to the default behaviour of text simply printing outside its container, which technically isn't considered overflow -->
+<style>
+    .overflowing {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
