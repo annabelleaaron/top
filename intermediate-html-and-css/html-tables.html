@@ -15,3 +15,60 @@
         <td>Second data cell</td>
     </tr>
 </table>
+
+<!-- What is a table? -->
+<!-- A structured set of data made up of rows and columns (tabular data)
+allowing us to quickly and easily look up values that indicate some kind of connection between different types of data 
+when implemented correctly, they are handled well by accessibility tools such as screen readers - enhance the experience of sighted and visually impaired users -->
+
+<!-- Why is it a bad idea to use HTML Tables for page layout? -->
+<!-- 
+    1. layout tables reduce accessibility for visually impaired users -
+    screen readers' output will confuse blind people as they interpret the tags that edist in a HTML page and read out the contents to the user
+ -->
+
+<!-- What are caption elements useful for? -->
+<!-- To show a description of the table contents - useful for all readers to get a quick summary and check whether the table is useful to them -->
+
+<!-- What is the scope attribute? -->
+<!-- It can be added to the <th> element to tell the screen readers exactly what cells the header is a header for. -->
+    <thead>
+        <tr>
+          <th scope="col">Purchase</th>
+          <th scope="col">Location</th>
+          <th scope="col">Date</th>
+          <th scope="col">Evaluation</th>
+          <th scope="col">Cost (€)</th>
+        </tr>
+    </thead>
+
+    <tr>
+        <th scope="row">Haircut</th>
+        <td>Hairdresser</td>
+        <td>12/09</td>
+        <td>Great idea</td>
+        <td>30</td>
+      </tr>
+<!-- Screen readers will recongnize markup structured like this and allow their users to read out the entire column/row at once. -->
+<!-- scope also has value: colgroup and rowgroup that are used for headings that sit over the top of multiple columns/rows -->
+<thead>
+    <tr>
+      <th colspan="3" scope="colgroup">Clothes</th>
+    </tr>
+    <tr>
+      <th scope="col">Trousers</th>
+      <th scope="col">Skirts</th>
+      <th scope="col">Dresses</th>
+    </tr>
+</thead>
+
+<thead>
+    <tr>
+      <th colspan="3" scope="colgroup">Clothes</th>
+    </tr>
+    <tr>
+      <th scope="col">Trousers</th>
+      <th scope="col">Skirts</th>
+      <th scope="col">Dresses</th>
+    </tr>
+  </thead>
